@@ -1,0 +1,33 @@
+{
+  "name": "samanecli",
+  "version": "2.0.1",
+  "description": "SamaneMVC Cli",
+  "main": "sm-cli.js",
+  "bin": {
+    "sm": "sm-cli.js"
+  },
+  "scripts": {
+    "test": "node sm-cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LPIX-11/SamaneCLI.git"
+  },
+  "keywords": [
+    "samaenemvc framework",
+    "samanemvc",
+    "samanecli",
+    "php cli",
+    "cli"
+  ],
+  "author": "Mohamed Johnson <dev.mohamed.johnson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LPIX-11/SamaneCLI/issues"
+  },
+  "homepage": "https://github.com/LPIX-11/SamaneCLI#readme",
+  "dependencies": {
+    "basic": "^2.0.3",
+    "npm": "^6.9.0"
+  }
+}

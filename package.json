@@ -1,10 +1,12 @@
 {
-  "name": "samanecli",
-  "version": "2.0.1",
-  "description": "SamaneMVC Cli",
+  "name": "samanemvccli",
+  "version": "1.0.4",
+  "description": "SamaneMVC Cli Beta Test",
   "main": "sm-cli.js",
   "bin": {
-    "sm": "sm-cli.js"
+    "sm": "sm-cli.js",
+    "samane": "versions/sm-cli_versions.js",
+    "sm-version": "versions/sm-cli_versions.js"
   },
   "scripts": {
     "test": "node sm-cli.js"
@@ -14,6 +16,7 @@
     "url": "git+https://github.com/LPIX-11/SamaneCLI.git"
   },
   "keywords": [
+    "samane mvc",
     "samaenemvc framework",
     "samanemvc",
     "samanecli",

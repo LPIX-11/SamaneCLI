@@ -1,3 +1,8 @@
+/**
+ * @author Mohamed Johnson
+ * 03/2019
+ */
+ 
 'use strict'
 
 const Fs = require('fs')
@@ -13,12 +18,15 @@ class Version extends Command {
 	}
 
 	async handle () {
+		// Creating a constant that can hold the path of files
 		var path = require('path')
+
+		// Retrieving the file path and extracting it's content		
 		const pkg = Fs.readFile(path.resolve(__dirname, 'version.txt'), function (err, data) {
 			
-			var reads = data.toString().split('\t');
-			var read = reads[Math.floor(Math.random() == reads.length)]
-			console.log(read.toString())
+			var reads = data.toString().split('\t'); // Exploding the retrieved data
+			var read = reads[Math.floor(Math.random() == reads.length)] // Exploiting each reading position
+			console.log(read.toString()) // Printing the file content
 		})		
 	}
 }

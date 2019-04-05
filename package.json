@@ -1,12 +1,11 @@
 {
   "name": "samanemvccli",
-  "version": "1.0.4",
+  "version": "1.1.4",
   "description": "SamaneMVC Cli Beta Test",
   "main": "sm-cli.js",
   "bin": {
     "sm": "sm-cli.js",
-    "samane": "versions/sm-cli_versions.js",
-    "sm-version": "versions/sm-cli_versions.js"
+    "samane": "sm-cli.js"
   },
   "scripts": {
     "test": "node sm-cli.js"
@@ -19,6 +18,7 @@
     "samane mvc",
     "samaenemvc framework",
     "samanemvc",
+    "interaction",
     "samanecli",
     "php cli",
     "cli"
@@ -30,7 +30,10 @@
   },
   "homepage": "https://github.com/LPIX-11/SamaneCLI#readme",
   "dependencies": {
+    "@adonisjs/ace": "github:adonisjs/ace",
     "basic": "^2.0.3",
-    "npm": "^6.9.0"
-  }
+    "npm": "^6.9.0",
+    "ora": "^3.4.0"
+  },
+  "devDependencies": {}
 }

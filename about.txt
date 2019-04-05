@@ -6,9 +6,3 @@
  _____) | ( | | | | ( ( | | | | ( (/ /   | || || | \  / | \_____ 
 (______/ \_||_|_|_|_|\_||_|_| |_|\____)  |_||_||_|  \/   \______)
                                                                   2.0.1 LTS
-
-Manual
-
-sm                             ................................. display samanecli
-sm-version                     ................................. [samane] display samanecli version
-Release of command soon enough ................................. Please wait

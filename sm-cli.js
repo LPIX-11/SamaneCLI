@@ -1,11 +1,13 @@
 #!/usr/bin/env node
+'use stric'
+// Since we're using es6 we don't need ;
+const ace = require('@adonisjs/ace')
 
-var fs = require('fs');
-var path = require('path');
+// ace.addCommand(require('./commands/hello'))
+// ace.addCommand(require('./commands/spin'))
+ace.addCommand(require('./commands/version'))
+ace.addCommand(require('./commands/framework/start'))
 
-fs.readFile(path.resolve(__dirname, 'about.txt'), function (err, data) {
-	if (!data) return 1;
-	var reads = data.toString().split('\t');
-	var read = reads[Math.floor(Math.random() == reads.length)]
-	console.log(read);
-});
+// Boot of ace to execute commands
+ace.wireUpWithCommander()
+ace.invoke()

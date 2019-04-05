@@ -4,7 +4,7 @@ Project Title
 # SamaneCLI
 
 ````````````
-Description: 
+Description 
 ````````````
 :+1: CLI specialy designed for ^SamaneMVC@2.0.1
 

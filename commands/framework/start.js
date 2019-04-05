@@ -41,8 +41,8 @@ class Start extends Command {
 												spinner.color = 'red'
 
 												// node couldn't execute the command
-												console.log('Could not create the project\n' + err)
-                                                spinner.fail('Project: ' + projectName + ' not created due to errors above:')
+												console.log('Could not create the project\n')
+                                                spinner.fail('Project: ' + projectName + ' not created due to following errors:')
 											} else {
 												spinner.color = 'green'
 												spinner.text = 'Done'

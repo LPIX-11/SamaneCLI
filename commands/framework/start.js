@@ -17,7 +17,7 @@ class Start extends Command {
 				{ -p, --project: Creates a new project } 
 				{ -b, --blank: Creates a new project with all settings as default } 
 				{ -m, --minimal: Creates a new project with minimal settings }
-				{ -n, --no-interaction: Directly creates a project with default settings without asking question}
+				{ -n, --noInteraction: Directly creates a project with default settings without asking questions }
 		`
 	}
 
@@ -39,6 +39,10 @@ class Start extends Command {
 		else if (`${projectName}` === '...') {
 			// Waiting for him to give the name of the project
 			projectName = await this.ask('Name of the project? ', 'SamaneProject')
+			
+			/*if (!blank && !minimal) {
+				confirmDbLink = await this.confirm('Do you want to link your project to a database? ')
+			}*/
 
 			console.log(`\nStarting sm start -p ${projectName} ${blank ? 'with default settings' : ''} ${minimal ? 'with minimal settings' : ''}`)
 			// Calling the the default settings project downloader

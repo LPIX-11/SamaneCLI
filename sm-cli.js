@@ -12,7 +12,6 @@ const ace = require('@adonisjs/ace')
 
 // Adding all created commands
 ace.addCommand(require('./commands/version'))
-ace.addCommand(require('./commands/framework/ask'))
 ace.addCommand(require('./commands/framework/start'))
 
 // Boot of ace to execute commands

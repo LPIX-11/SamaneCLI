@@ -27,7 +27,7 @@ class Start extends Command {
 
 	async handle({ projectName }, { blank, minimal, noInteraction }) {		
 		// No interaction from user required in this Section
-		if (`${ noInteraction }`  === true) {
+		if (noInteraction) {
 			// Assinging a default name to the project
 			projectName = 'SamaneProject'
 
@@ -36,9 +36,10 @@ class Start extends Command {
 			await this.waitForDownload(`${ projectName }`)
 		}
 		// In this section we interact with the user
-		else if (`${ projectName }` === '...') {
-			// Waiting for him to give the name of the project
-			projectName = await this.ask('Name of the project? ', 'SamaneProject')
+		else {
+			// Waiting for him to give the name of the project if not given at the begining of the command
+			if (`${ projectName }` === '...')
+				projectName = await this.ask('Name of the project? ', 'SamaneProject')
 			
 			if (!blank && !minimal) {
 				// Asking for connection with database if not a blank or a minimal project
@@ -54,7 +55,7 @@ class Start extends Command {
 					],
 					'Relational')
 
-					/* To implement after
+					/* To implement later
 						,
 						'NoSQL',
 						'Cloud'

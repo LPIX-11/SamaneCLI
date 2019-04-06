@@ -50,7 +50,7 @@ class Start extends Command {
 				// On wich database server
 				if (confirmDbLink) {
 					// Including the cloud databases
-					const databaseType = await this.choice('Whhich type of database is it? ', [
+					const databaseType = await this.choice('Which type of database is it? ', [
 						'Relational'
 					],
 					'Relational')
@@ -156,13 +156,13 @@ class Start extends Command {
 
 												// node couldn't execute the command
 												console.log('Could not create the project\n')
-                                                spinner.fail('Project: ' + projectName + ' not created due to following errors:')
+                                                spinner.fail(`Project:  ${ projectName } ${ this.chalk.bold.bgRed('not created due to following errors') }:`)
 											} else {
 												spinner.color = 'green'
 												spinner.text = 'Done'
 
 												// The project has been successfuly created
-                                                spinner.succeed(projectName + ' Created')
+                                                spinner.succeed(`Project: ${ this.chalk.green( projectName + ' Created') }`)
 											}
 
 											// the *entire* stdout and stderr (buffered)

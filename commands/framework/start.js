@@ -49,7 +49,7 @@ class Start extends Command {
 				// On wich database server
 				if (confirmDbLink) {
 					// Including the cloud databases
-					const databaseType = await this.choice('How to interact with database? ', [
+					const databaseType = await this.choice('Whhich type of database is it? ', [
 						'Relational'
 					],
 					'Relational')

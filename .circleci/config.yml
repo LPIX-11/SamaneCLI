@@ -3,9 +3,8 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      # Docker images for node and mongodb
+      # Docker images for node
       - image: circleci/node:10.15.3
-      - image: circleci/mongo:4.0.7
     steps:
       - checkout
       # Download and cache dependencies

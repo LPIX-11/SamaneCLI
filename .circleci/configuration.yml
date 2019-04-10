@@ -31,3 +31,12 @@ jobs:
       - store_artifacts:
           path: coverage
           prefix: coverage
+workflows:
+  version: 2
+  develop:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master       # only run builds when a push on master branch happens
+

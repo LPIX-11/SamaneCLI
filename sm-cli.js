@@ -14,6 +14,9 @@ const ace = require('@adonisjs/ace')
 ace.addCommand(require('./commands/version'))
 ace.addCommand(require('./commands/framework/start'))
 
+// Geenerate Models, Entities and Controllers
+ace.addCommand(require('./commands/framework/FilesGenerator/createFile'))
+
 // Boot of ace to execute commands
 ace.wireUpWithCommander()
 ace.invoke()

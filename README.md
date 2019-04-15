@@ -20,7 +20,11 @@ Description
 author
 ````````````
 Mohamed Johnson
-Djiby Ndiaye
+
+````````````
+Contributors
+````````````
++ Djiby Ndiaye
 
 `````````````
 Language Used

@@ -19,7 +19,7 @@ Description
 ````````````
 author
 ````````````
-- Mohamed Johnson
++ Mohamed Johnson
 
 ````````````
 Contributors

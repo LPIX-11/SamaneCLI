@@ -1,0 +1,5 @@
+.directory
+./.git/.directory
+./.circleci/.directory
+./commands/.directory
+./node_modules/.directory

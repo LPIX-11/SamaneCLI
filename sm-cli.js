@@ -15,7 +15,11 @@ ace.addCommand(require('./commands/version'))
 ace.addCommand(require('./commands/framework/start'))
 
 // Geenerate Models, Entities and Controllers
-ace.addCommand(require('./commands/framework/FilesGenerator/createFile'))
+ace.addCommand(require('./commands/framework/generate/generate'))
+
+// Commands shortcuts
+
+// ace.addCommand(require('./commands/framework/shortcuts/generate_shortcut'))
 
 // Boot of ace to execute commands
 ace.wireUpWithCommander()

@@ -6,8 +6,10 @@
 'use strict'
 
 const { Command } = require('@adonisjs/ace')
-const { exec } = require('child_process')
-const Ora = require('ora')
+const { exec }    = require('child_process')
+
+const Ora         = require('ora')
+const fs          = require('fs')
 
 class Start extends Command {
 	static get signature() {
@@ -41,6 +43,9 @@ class Start extends Command {
 			if (`${ projectName }` === '...')
 				projectName = await this.ask('Name of the project? ', 'SamaneProject')
 			
+			// Config holds all of projects' configurations
+			let config
+
 			if (!blank && !minimal) {
 				// Asking for connection with database if not a blank or a minimal project
 				const confirmDbLink = await this.confirm('Do you want to link your project to a database? ', { default: false })
@@ -130,12 +135,23 @@ class Start extends Command {
 					console.log(`Database Port: ${ databasePort }`)
 					console.log(`Database Host: ${ databaseHost }`)
 					console.log(`Connection Type: ${ connectionType }`)
+
+					config = `,"database_type": "${ databaseType }","database_instance": "${ database }","database_name": "${ databaseName }","database_port": "${ databasePort }","database_host": "${ databaseHost }","database_connection_type": "${ connectionType }"}`
+				} else {
+					config = "}"
 				}
 			}
 
 			console.log(`\nStarting sm start -p ${projectName} ${blank ? 'with default settings' : ''} ${minimal ? 'with minimal settings' : ''}`)
 			// Calling the the default settings project downloader
-			await this.waitForDownload(`${projectName}`)
+			// await this.waitForDownload(`${projectName}`)
+
+			// Writting configuration on a hidden file
+			config = `{"project_name": "${projectName}"${ config }`
+			// await this.waitForDownload(`${projectName}`, config)
+
+			await this.writeConfig(`${projectName}`, config)
+			// console.log(`${ this.icon('success') } Configurations Ok`)
 		}
 	}
 
@@ -144,7 +160,7 @@ class Start extends Command {
 		return new Promise(resolve => this.downloadFramework(projectName))
 	}
 
-	async downloadFramework(projectName) {
+	async downloadFramework(projectName, config) {
 		// Starting the spinner to make the user wait till everything is treated
 		const spinner = Ora('Processing ... \n')
 		spinner.start()
@@ -172,8 +188,53 @@ class Start extends Command {
 							)
 		// Stopping the spinner when the actions are done
 		spinner.stop()
+		this.writeConfig(`${projectName}`, config)
 	}
 
+	// async downloadFramework(projectName) {
+	// 	// Starting the spinner to make the user wait till everything is treated
+	// 	const spinner = Ora('Processing ... \n')
+	// 	spinner.start()
+
+	// 	// Using the promise to executes the composer command that download the default settings Framework
+	// 	return new Promise (resolve => exec('composer create-project samane/samanemvc ' + projectName + ' --verbose', (err, stderr, stdout) => {
+	// 										if (err) {												
+	// 											spinner.color = 'red'
+
+	// 											// node couldn't execute the command
+	// 											console.log('Could not create the project\n')
+ //                                                spinner.fail(`Project:  ${ projectName } ${ this.chalk.bold.bgRed('not created due to following errors') }:`)
+	// 										} else {
+	// 											spinner.color = 'green'
+	// 											spinner.text = 'Done'
+
+	// 											// The project has been successfuly created
+ //                                                spinner.succeed(`Project: ${ this.chalk.green( projectName + ' Created') }`)
+	// 										}
+
+	// 										// the *entire* stdout and stderr (buffered)
+	// 										console.log(`trace: ${stdout}`)
+	// 										// console.log(`stderr: ${stderr}`)
+	// 									})
+	// 						)
+	// 	// Stopping the spinner when the actions are done
+	// 	spinner.stop()
+	// }
+
+	// Writing configuration file
+	async writeConfig(projectName, configurations) {
+		// Starting the spinner to make the user wait till everything is treated
+		const spinner = Ora('Processing ... \n')
+		spinner.start()
+
+		fs.writeFile(`${ projectName }/.samane.json`, `${ configurations }`, function (err) {
+			  if (err) throw err;
+			  spinner.info('Configuration file is created successfully.')
+			  // Stopping the spinner when the actions are done
+			  spinner.stop()
+			})
+		
+	}
 	// Waiting a second
 	async waitASecond() {
 		return new Promise(resolve => setTimeout(resolve, 1000))

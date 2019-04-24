@@ -1,6 +1,3 @@
-````````````
-Project Title
-````````````
 # SamaneCLI
 
 Quality Assurance
@@ -16,19 +13,16 @@ Description
 ````````````
 :+1: CLI specialy designed for ^SamaneMVC@2.0.1
 
-````````````
+
 author
-````````````
+------
 + Mohamed Johnson
 
-````````````
 Contributors
-````````````
+------------
 + Djiby Ndiaye
 
-`````````````
 Language Used
-``````````````
-
+-------------
 [nodejs](https://nodejs.org/en/)
 

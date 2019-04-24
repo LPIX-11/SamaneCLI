@@ -4,7 +4,7 @@
 This is the CLI specialy made for the Senegalese Made PHP Framework Samane. It's purpose is 
 to be the assistant of the developer and help him go faster when using the Framework.
 The CLI is written in [nodejs](https://nodejs.org/en/) and is up to Modern Software Development Standards.
-But, we're still improving it, so if you just fell like it we love pull requests ^_^.
+But, we're still improving it, so if you just feel like it we love pull requests ^_^.
 
 Quality Assurance: [![Codacy Badge](https://api.codacy.com/project/badge/Grade/52b7e7291f8341dba2fd9e4b73f18265)](https://app.codacy.com/app/LPIX-11/SamaneCLI?utm_source=github.com&utm_medium=referral&utm_content=LPIX-11/SamaneCLI&utm_campaign=Badge_Grade_Dashboard)
 

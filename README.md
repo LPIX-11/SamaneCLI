@@ -12,7 +12,7 @@ Build: [![CircleCI](https://circleci.com/gh/LPIX-11/SamaneCLI.svg?style=svg)](ht
 
 ### Structure
     .
-      - Commands
+      - commands
       - node_modules
       - about.txt
       - package-lock.json
@@ -26,7 +26,15 @@ Build: [![CircleCI](https://circleci.com/gh/LPIX-11/SamaneCLI.svg?style=svg)](ht
       - version.txt
      
     ./commands/framework
+      - classes
+      - generate
       - start.js
+    
+    ./commands/framework/classes
+      - Generator.js
+      
+    ./commands/framework/generate
+      - generate.js
       
 #### Commands (using sm or samane)
     + Command to create a new project
@@ -46,25 +54,31 @@ Build: [![CircleCI](https://circleci.com/gh/LPIX-11/SamaneCLI.svg?style=svg)](ht
             - project name
             * database connection type
     
+    + Controller, Model or Entity generation
+        - sm generate --model <model_name>
+            - generates a model class
+            
+        - sm generate --entity <entity_name>
+            - generates an entity
+            
+        - sm generate --controller <controller_name>
+            - generates a controller class
+
+        - sm generate <name> -m -c -e
+            - generates a model, controller and entity
+            
+        - sm generate <name> -m -e
+            - generates a model and an entity
+    
     NB: The use of the -p flag will allow to write directly the project name, 
         and the use of multiple flags is possible 
         
 #### In Sight
-    Files generation through the CLI
-        - sm generate --model <model_name>
-            - Will generate a model class
-            
-        - sm generate --entity <entity_name>
-            - will generate an entity
-            
-        - sm generate --controller <controller_name>
-            - Will generate a controller class
-
-        - sm generate <name> -m -c -e
-            - Will generate a model, controller and entity
-            
-        - sm generate <name> -m -e
-            - Will generate a model and an entity
+    Improve the sm generate command
+        - write more ergonomic code
+        - allow to add attributes when creating the entity
+        - create a model by exporting the entity
+        - create a entity by exporting the model
             
 ##### Author
     + Mohamed Johnson

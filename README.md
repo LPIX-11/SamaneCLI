@@ -28,25 +28,23 @@ Build: [![CircleCI](https://circleci.com/gh/LPIX-11/SamaneCLI.svg?style=svg)](ht
     ./commands/framework
       - start.js
       
-#### Commands [using sm or samane]
-    sm start 
-        - project name
-        - database type
-        - database instance
-        - database name
-        - database host
-        - database port
-        * database connection type
-        
-    sm start --blank -> this will give you the skeleton of the framework
-        - project name
+#### Commands (using sm or samane)
+    + Command to create a new project
+        sm start 
+            - project name
+            - database type
+            - database instance
+            - database name
+            - database host
+            - database port
+            * database connection type
 
-    sm start --minimal -> this will give you a minimal project set up
-        - project name
-        - notification_toggle
-        - active
-        * user
-        * database connection type
+        sm start --blank -> this will give you the skeleton of the framework
+            - project name
+
+        sm start --minimal -> this will give you a minimal project set up
+            - project name
+            * database connection type
     
     NB: The use of the -p flag will allow to write directly the project name, 
         and the use of multiple flags is possible 
@@ -64,6 +62,9 @@ Build: [![CircleCI](https://circleci.com/gh/LPIX-11/SamaneCLI.svg?style=svg)](ht
 
         - sm generate <name> -m -c -e
             - Will generate a model, controller and entity
+            
+        - sm generate <name> -m -e
+            - Will generate a model and an entity
             
 ##### Author
     + Mohamed Johnson

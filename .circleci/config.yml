@@ -21,6 +21,9 @@ jobs:
       - run:
           name: Running app tests
           command: npm test
+          name: Testing Project Creation
+          command: ./smcli.js start -p SamaneTestProject -b
+          
       # Save the cache for faster builds
       - save_cache:
           paths:

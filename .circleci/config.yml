@@ -17,10 +17,11 @@ jobs:
       - run:
           name: Installing npm dependencies
           command: npm install
-      # Run app tests
+      # Run app commandss
       - run:
           name: Running app tests
           command: npm test
+      - run:        
           name: Testing Project Creation
           command: ./smcli.js start -p SamaneTestProject -b
           

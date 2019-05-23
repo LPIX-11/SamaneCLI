@@ -41,5 +41,5 @@ workflows:
       - build:
           filters:
             branches:
-              only: master       # only run builds when a push on master branch happens
+              only: dev       # only run builds when a push on master branch happens
 

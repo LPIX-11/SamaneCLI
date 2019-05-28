@@ -21,9 +21,6 @@ jobs:
       - run:
           name: Running app tests
           command: npm test
-      - run:        
-          name: Testing Project Creation
-          command: node smcli.js start -p SamaneTestProject -b
           
       # Save the cache for faster builds
       - save_cache:
@@ -41,5 +38,5 @@ workflows:
       - build:
           filters:
             branches:
-              only: dev       # only run builds when a push on master branch happens
+              only: dev       # only run builds when a push on dev branch happens
 

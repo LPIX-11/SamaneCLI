@@ -22,12 +22,16 @@ jobs:
           name: Running app tests
           command: npm test
       - run:        
-          name: Testing Project Creation
+          name: Listing The Project Components
           command: ls -l
       
-      #- run:        
-       #   name: Testing Project Creation
-        #  command: node smcli.js start -p SamaneTestProject -b
+      - run:        
+          name: Attributing Rigths
+          command: chmod +x smcli.js
+      
+      - run:        
+          name: Testing Project Creation
+          command: ./smcli.js start -p SamaneTestProject -b
           
       # Save the cache for faster builds
       - save_cache:

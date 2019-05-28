@@ -25,9 +25,9 @@ jobs:
           name: Listing The Project Components
           command: ls -l
       
-      #- run:        
-       #   name: Attributing Rigths
-        #  command: chmod +x smcli.js
+      - run:        
+          name: Attributing Rigths
+          command: chmod +x /home/circleci/repo/smcli.js
       
       - run:        
           name: Testing Project Creation

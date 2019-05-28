@@ -23,7 +23,11 @@ jobs:
           command: npm test
       - run:        
           name: Testing Project Creation
-          command: node smcli.js start -p SamaneTestProject -b
+          command: ls -l
+      
+      #- run:        
+       #   name: Testing Project Creation
+        #  command: node smcli.js start -p SamaneTestProject -b
           
       # Save the cache for faster builds
       - save_cache:

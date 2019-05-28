@@ -21,17 +21,10 @@ jobs:
       - run:
           name: Running app tests
           command: npm test
-      - run:        
-          name: Listing The Project Components
-          command: ls -l
-      
-      - run:        
-          name: Attributing Rigths
-          command: sudo chmod +x /home/circleci/repo/smcli.js
-      
+          
       - run:        
           name: Testing Project Creation
-          command: pwd
+          command: node
           
       # Save the cache for faster builds
       - save_cache:
